@@ -1,0 +1,18 @@
+.buttons {
+  display: flex;
+  margin-top: 10px;
+}
+
+.buttons button {
+  flex-grow: 1;
+}
+
+.buttons .button__cancel {
+  background-color: #eee;
+  color: #444;
+}
+
+.buttons .button__confirm {
+  background-color: rgb(41, 201, 196);
+  color: #fff;
+}

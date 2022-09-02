@@ -1,0 +1,26 @@
+ul.navbar {
+  margin: 0;
+  padding: 0;
+}
+
+ul.navbar li {
+  list-style: none;
+}
+
+ul.navbar li a {
+  display: block;
+  text-decoration: none;
+  color: rgb(26 157 153);
+  padding: 10px;
+  text-align: center;
+}
+
+ul.navbar li a:hover {
+  background-color: rgb(41, 201, 196);
+  color: #fff;
+}
+
+ul.navbar li a.link__active {
+  background-color: rgb(41, 201, 196);
+  color: #fff;
+}

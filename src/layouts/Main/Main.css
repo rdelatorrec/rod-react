@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.layout {
+  display: flex;
+  width: 1024px;
+  background-color: #fff;
+  border: solid 1px #999;
+}
+
+.layout__sidebar {
+  width: 25%;
+}
+
+.layout__content {
+  width: 75%;
+  border-left: solid 1px #ccc;
+}
+
+.layout__border {
+  padding: 10px;
+}
