@@ -9,11 +9,12 @@ import { APP_AUTH, APP_TOKEN } from "./utils/Constants"
 import Cookies from 'js-cookie'
 import CryptoJS from 'crypto-js'
 import { useJwt } from "react-jwt"
+import { useDispatch } from 'react-redux'
 //import JWT from 'expo-jwt'
 import './App.css'
 
 function App() {
-  const [ user, setUser ] = useState({})
+  const dispatch = useDispatch()
   const [ isLogged, setIsLogged ] = useState(false)
   const token = localStorage.getItem(APP_TOKEN)
   const { decodedToken } = useJwt(token)
@@ -24,13 +25,17 @@ function App() {
     if (ciphertext !== undefined) {
       const bytes = CryptoJS.AES.decrypt(ciphertext, process.env.REACT_APP_API_SECRET)
       const originalText = bytes.toString(CryptoJS.enc.Utf8)
-      setUser(decodedToken)
+      dispatch({
+        type: 'user',
+        payload: decodedToken
+      })
       setIsLogged(originalText === process.env.REACT_APP_API_KEY)
     }
+
   }, [decodedToken])
 
   return (
-    <AppContext.Provider value={{isLogged, setIsLogged, user, setUser}}>
+    <AppContext.Provider value={{isLogged, setIsLogged}}>
       <Routes>
         <Route path="/" element={<Home title="Rod" />} />
         <Route path="/login" element={<Login />} />

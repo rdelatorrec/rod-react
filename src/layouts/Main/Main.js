@@ -1,11 +1,10 @@
-import { useContext } from 'react'
-import { AppContext } from "../../utils/Services"
 import Auth from "../../utils/Auth"
 import Nav from '../../components/Nav/Nav'
+import { useSelector } from 'react-redux'
 import './Main.css'
 
 const Main = ({ children }) => {
-  const { user } = useContext(AppContext)
+  const user = useSelector(state => state.user)
 
   return (
     <div className="container">
