@@ -32,7 +32,7 @@ function App() {
       setIsLogged(originalText === process.env.REACT_APP_API_KEY)
     }
 
-  }, [decodedToken])
+  }, [dispatch, decodedToken])
 
   return (
     <AppContext.Provider value={{isLogged, setIsLogged}}>
