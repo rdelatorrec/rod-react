@@ -1,9 +1,11 @@
-import initialValues from "./initValues"
+import initialValues from "./initialValues"
 
 const Reducer = (state = initialValues, action) => {
   switch (action.type) {
     case 'user':
-      return { user: action.payload }
+      return { ...state, user: action.payload }
+    case 'loader':
+      return { ...state, loader: action.payload }
     default:
       return state
   }

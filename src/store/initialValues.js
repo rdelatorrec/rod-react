@@ -5,6 +5,7 @@ const initialValues = {
     first_name: "",
     last_name: "",
   },
+  loader: false,
 }
 
 export default initialValues
